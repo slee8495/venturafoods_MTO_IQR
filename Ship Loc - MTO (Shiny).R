@@ -77,11 +77,11 @@ server <- function(input, output, session) {
     data_filtered <- mto_tab_2
     
     if (input$filter_loc != "All") {
-      data_filtered <- data_filtered[data_filtered$loc == as.numeric(input$filter_loc), ]
+      data_filtered <- data_filtered[data_filtered$Location == as.numeric(input$filter_loc), ]
     }
     
     if (input$filter_item_2 != "All") {
-      data_filtered <- data_filtered[data_filtered$Item == input$filter_Item, ]
+      data_filtered <- data_filtered[data_filtered$Item == input$filter_item_2, ]
     }
     
     data_filtered <- data_filtered %>% arrange(as.numeric(Location))  # Sort by location
